@@ -62,29 +62,36 @@
 Кнопка "Зменшити" робить квадрат менше на 10 пікселів,  "Збільшити" - більше на 10 пікселів.
 */
 
-const decreaseRef = document.querySelector("#decrease");
-const increaseRef = document.querySelector("#increase");
-const boxRef = document.querySelector('#box');
+// const decreaseRef = document.querySelector("#decrease");
+// const increaseRef = document.querySelector("#increase");
+// const boxRef = document.querySelector('#box');
 
-decreaseRef.addEventListener('click', onDecrease);
-increaseRef.addEventListener('click', onIncrease)
+// decreaseRef.addEventListener('click', onDecrease);
+// increaseRef.addEventListener('click', onIncrease)
 
-function onDecrease() {
-  let size = parseInt(getComputedStyle(boxRef).width);
-  boxRef.style.width = size - 10 + 'px'; 
-  boxRef.style.height = size - 10 + "px"; 
-}
-function onIncrease() {
-  let size = parseInt(getComputedStyle(boxRef).width);
-  boxRef.style.width = size + 10 + "px";
-  boxRef.style.height = size + 10 + "px";
-}
+// function onDecrease() {
+//   let size = parseInt(getComputedStyle(boxRef).width);
+//   boxRef.style.width = size - 10 + 'px'; 
+//   boxRef.style.height = size - 10 + "px"; 
+// }
+// function onIncrease() {
+//   let size = parseInt(getComputedStyle(boxRef).width);
+//   boxRef.style.width = size + 10 + "px";
+//   boxRef.style.height = size + 10 + "px";
+// }
 
 //TODO:==============================================
 /*
 Завдання 5
 Додайте слухач кліку на window і визначте чи клікнув користувач у дів з id="place".
 */
+const placeRef = document.querySelector("#place");
+
+addEventListener("click", (event) => {
+  if(event.target === placeRef) {
+    console.log(true);
+  }
+})
 
 //TODO:==============================================
 /*
