@@ -71,8 +71,8 @@
 
 // function onDecrease() {
 //   let size = parseInt(getComputedStyle(boxRef).width);
-//   boxRef.style.width = size - 10 + 'px'; 
-//   boxRef.style.height = size - 10 + "px"; 
+//   boxRef.style.width = size - 10 + 'px';
+//   boxRef.style.height = size - 10 + "px";
 // }
 // function onIncrease() {
 //   let size = parseInt(getComputedStyle(boxRef).width);
@@ -85,13 +85,13 @@
 Завдання 5
 Додайте слухач кліку на window і визначте чи клікнув користувач у дів з id="place".
 */
-const placeRef = document.querySelector("#place");
+// const placeRef = document.querySelector("#place");
 
-addEventListener("click", (event) => {
-  if(event.target === placeRef) {
-    console.log(true);
-  }
-})
+// addEventListener("click", (event) => {
+//   if(event.target === placeRef) {
+//     console.log(true);
+//   }
+// })
 
 //TODO:==============================================
 /*
@@ -100,6 +100,16 @@ addEventListener("click", (event) => {
 у кожному елементі списку у 2 рази
 */
 
+const listEl = document.querySelectorAll('.listItem');
+const btnEl = document.querySelector('#double');
+
+btnEl.addEventListener('click', onBtnClick);
+
+function onBtnClick() {
+	listEl.forEach((item) => {
+		item.textContent = BigInt(item.textContent) ** 2n;
+	});
+}
 //TODO:==============================================
 /*
 Завдання 7
