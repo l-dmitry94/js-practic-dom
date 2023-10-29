@@ -41,26 +41,44 @@
 і кнопка набуває початкового вигляду.
 */
 
-const passwordInputEl = document.querySelector('#passwordInput');
-const passwordButtonEl = document.querySelector('#passwordButton');
+// const passwordInputEl = document.querySelector('#passwordInput');
+// const passwordButtonEl = document.querySelector('#passwordButton');
 
-passwordButtonEl.addEventListener('click', clickBtn);
+// passwordButtonEl.addEventListener('click', clickBtn);
 
-function clickBtn() {
-  if (passwordInputEl.getAttribute('type') === 'text') {
-    passwordInputEl.setAttribute('type', 'password');
-    passwordButtonEl.textContent = 'Розкрити';
-  } else {
-    passwordInputEl.setAttribute('type', 'text');
-    passwordButtonEl.textContent = 'Приховати';
-  }
-}
+// function clickBtn() {
+//   if (passwordInputEl.getAttribute('type') === 'text') {
+//     passwordInputEl.setAttribute('type', 'password');
+//     passwordButtonEl.textContent = 'Розкрити';
+//   } else {
+//     passwordInputEl.setAttribute('type', 'text');
+//     passwordButtonEl.textContent = 'Приховати';
+//   }
+// }
 
 //TODO:==============================================
 /*
 Завдання 4
 Кнопка "Зменшити" робить квадрат менше на 10 пікселів,  "Збільшити" - більше на 10 пікселів.
 */
+
+const decreaseRef = document.querySelector("#decrease");
+const increaseRef = document.querySelector("#increase");
+const boxRef = document.querySelector('#box');
+
+decreaseRef.addEventListener('click', onDecrease);
+increaseRef.addEventListener('click', onIncrease)
+
+function onDecrease() {
+  let size = parseInt(getComputedStyle(boxRef).width);
+  boxRef.style.width = size - 10 + 'px'; 
+  boxRef.style.height = size - 10 + "px"; 
+}
+function onIncrease() {
+  let size = parseInt(getComputedStyle(boxRef).width);
+  boxRef.style.width = size + 10 + "px";
+  boxRef.style.height = size + 10 + "px";
+}
 
 //TODO:==============================================
 /*
